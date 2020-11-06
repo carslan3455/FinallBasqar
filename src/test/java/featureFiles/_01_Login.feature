@@ -7,7 +7,7 @@ Feature: Login Functionality
       | username | daulet2030@gmail.com |
       | password | TechnoStudy123@      |
     And User click on the element in the dialog content class
-      | loginBtn |
-      | gotItBtn |
+      | loginButton |
+      | gotItButton |
 
     Then User should login successfully

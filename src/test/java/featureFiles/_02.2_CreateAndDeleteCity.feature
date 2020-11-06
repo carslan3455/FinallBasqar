@@ -8,8 +8,8 @@ Feature: Creat and Delete Functionality for Cities
       | password | TechnoStudy123@      |
 
     And User click on the element in the dialog content class
-      | loginBtn |
-      | gotItBtn |
+      | loginButton |
+      | gotItButton |
 
     Then User should login successfully
 
@@ -23,7 +23,7 @@ Feature: Creat and Delete Functionality for Cities
     And User click on the element in the dialog content class
       | addButton      |
       | country        |
-      | Group3Country5 |
+      | countryRandom |
 
     And User sending the keys in the dialog content class
       | name | Group3City5 |

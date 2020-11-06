@@ -1,4 +1,4 @@
-Feature: Creat and Delete Functionality for Countries and Cities
+Feature: Create And Delete Subject Categories
 
   Background:
     Given Navigate to basqar
@@ -13,18 +13,18 @@ Feature: Creat and Delete Functionality for Countries and Cities
 
     Then User should login successfully
 
-  Scenario: Creat and Delete Country and City
+  Scenario:  Create and Delete Subject Categories
 
     When User click on the element in the leftNav class
-      | setup      |
-      | parameters |
-      | countries  |
+      | education      |
+      | setupEducation |
+      | subjectCategories   |
 
     And User click on the element in the dialog content class
       | addButton |
 
     And User sending the keys in the dialog content class
-      | name | Group3Country5 |
+      | name | Group3Education5 |
       | code | 123            |
 
     And User click on the element in the dialog content class
@@ -33,28 +33,9 @@ Feature: Creat and Delete Functionality for Countries and Cities
     Then User should see success/error message
       | successfully |
 
-    When User click on the element in the leftNav class
-      | cities |
-
-    And User click on the element in the dialog content class
-      | addButton      |
-      | country        |
-      | Group3Country5 |
-
-    And User sending the keys in the dialog content class
-      | name | Group3City5 |
-
-    And User click on the element in the dialog content class
-      | saveButton |
+    When User delete value
+      | Group3Education5 |
 
     Then User should see success/error message
       | successfully |
 
-    When User click on the element in the leftNav class
-      | countries |
-
-    When User delete value
-      | Group3Country5 |
-
-    Then User should see success/error message
-      | error |

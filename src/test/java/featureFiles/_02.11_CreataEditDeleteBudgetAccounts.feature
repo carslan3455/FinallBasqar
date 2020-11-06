@@ -1,4 +1,4 @@
-Feature: Creat and Delete Functionality for Countries and Cities
+Feature: Create Edit and Delete Functionality for Budget
 
   Background:
     Given Navigate to basqar
@@ -13,36 +13,26 @@ Feature: Creat and Delete Functionality for Countries and Cities
 
     Then User should login successfully
 
-  Scenario: Creat and Delete Country and City
+  Scenario:  Create , Edit and Delete Budget Accounts
 
     When User click on the element in the leftNav class
-      | setup      |
-      | parameters |
-      | countries  |
+      | budget  |
+      | budgetAccounts |
 
     And User click on the element in the dialog content class
       | addButton |
 
     And User sending the keys in the dialog content class
-      | name | Group3Country5 |
-      | code | 123            |
+      | code | 123 |
+      | name | budgetAccounts5 |
+      | name | budgetAccounts5 |
 
-    And User click on the element in the dialog content class
-      | saveButton |
-
-    Then User should see success/error message
-      | successfully |
-
-    When User click on the element in the leftNav class
-      | cities |
-
-    And User click on the element in the dialog content class
-      | addButton      |
-      | country        |
-      | Group3Country5 |
+    And Tarih yazilacak
+    |validForm|11/11/2011|
 
     And User sending the keys in the dialog content class
-      | name | Group3City5 |
+      | key | cc34 |
+      | value | 100 |
 
     And User click on the element in the dialog content class
       | saveButton |
@@ -51,10 +41,24 @@ Feature: Creat and Delete Functionality for Countries and Cities
       | successfully |
 
     When User click on the element in the leftNav class
-      | countries |
+      | humanResources  |
+      | setupHR         |
+      | salaryConstants |
 
-    When User delete value
-      | Group3Country5 |
+    Then User edit the element with value
+      | Group3SalaryConstans5 | editGroup3SalaryConstans5 |
 
     Then User should see success/error message
-      | error |
+      | successfully |
+
+    When User click on the element in the leftNav class
+      | humanResources  |
+      | setupHR         |
+      | salaryConstants |
+
+    When User delete value
+      | editGroup3SalaryConstans5 |
+
+    Then User should see success/error message
+      | successfully |
+

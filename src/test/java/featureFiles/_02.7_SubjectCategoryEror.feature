@@ -1,4 +1,4 @@
-Feature: Creat and Delete Functionality for Countries and Cities
+Feature: Creat and Delete Functionality for Subject Category
 
   Background:
     Given Navigate to basqar
@@ -16,45 +16,46 @@ Feature: Creat and Delete Functionality for Countries and Cities
   Scenario: Creat and Delete Country and City
 
     When User click on the element in the leftNav class
-      | setup      |
-      | parameters |
-      | countries  |
+      | education         |
+      | setupEducation    |
+      | subjectCategories |
 
     And User click on the element in the dialog content class
       | addButton |
 
     And User sending the keys in the dialog content class
-      | name | Group3Country5 |
+      | name | MySubjectCat3 |
+      | code | 123           |
+
+    And User click on the element in the dialog content class
+      | saveButton |
+
+    Then User should see success/error message
+      | successfully |
+
+    When User click on the element in the leftNav class
+      | subject |
+
+    And User click on the element in the dialog content class
+      | addButton |
+
+    And User sending the keys in the dialog content class
+      | name | Group3Subject5 |
       | code | 123            |
 
     And User click on the element in the dialog content class
-      | saveButton |
+      | subjectCategory |
+      | MySubjectCat3   |
+      | saveButton      |
 
     Then User should see success/error message
       | successfully |
 
     When User click on the element in the leftNav class
-      | cities |
-
-    And User click on the element in the dialog content class
-      | addButton      |
-      | country        |
-      | Group3Country5 |
-
-    And User sending the keys in the dialog content class
-      | name | Group3City5 |
-
-    And User click on the element in the dialog content class
-      | saveButton |
-
-    Then User should see success/error message
-      | successfully |
-
-    When User click on the element in the leftNav class
-      | countries |
+      | subjectCategories |
 
     When User delete value
-      | Group3Country5 |
+      | MySubjectCat3 |
 
     Then User should see success/error message
       | error |

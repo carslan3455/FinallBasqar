@@ -8,26 +8,28 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import utilities.Driver;
 
+import java.util.List;
+
 
 public class _Parent {
 
-        WebDriver driver;
-        WebDriverWait wait;
+    WebDriver driver;
+    WebDriverWait wait;
 
     public _Parent() {
         driver = Driver.getDriver();
-        wait = new WebDriverWait(driver,10);
+        wait = new WebDriverWait(driver, 10);
 
     }
 
-    public void clickFuntion(WebElement element){
+    public void clickFunction(WebElement element) {
         waitUntilClickable(element);
         scroolToElement(element);
         element.click();
 
     }
 
-    public void sendKeysFuntion(WebElement element,String value){
+    public void sendKeysFunction(WebElement element, String value) {
         waitUntilVisible(element);
         scroolToElement(element);
         element.clear();
@@ -35,28 +37,35 @@ public class _Parent {
 
     }
 
-    public void waitUntilClickable(WebElement element){
+    public void waitUntilClickable(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
 
     }
-    public void waitUntilVisible(WebElement element){
+
+    public void waitUntilVisible(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
 
     }
 
-    public void scroolToElement(WebElement element){
+    public void scroolToElement(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView();", element);
         //   js.executeScript("window.scrollBy(0,1000)");
 
     }
 
-    public void verifyElementContainsText(WebElement element, String expectedText){
+    public void verifyElementContainsText(WebElement element, String expectedText) {
 
         waitUntilVisible(element);
         String actualText = element.getText();
         System.out.println(actualText);
         Assert.assertTrue(actualText.toLowerCase().contains(expectedText.toLowerCase()));
 
+    }
+
+    public int randomSelect(List<WebElement> list) {
+        int randomSayi = (int) Math.random() * list.size();
+
+        return randomSayi;
     }
 }

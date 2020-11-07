@@ -21,8 +21,8 @@ Feature: Creat and Delete Functionality for Cities
       | cities     |
 
     And User click on the element in the dialog content class
-      | addButton      |
-      | country        |
+      | addButton     |
+      | country       |
       | countryRandom |
 
     And User sending the keys in the dialog content class

@@ -24,14 +24,14 @@ Feature: Create Edit and Delete Functionality for Human Resources
       | addButton |
 
     And User sending the keys in the dialog content class
-      | name | Group3SalaryConstans5 |
+      | nameConstans | Group3SalaryConstans5 |
 
     And Tarih yazilacak
-    |validForm|11/11/2011|
+    |validFrom|11/11/2011|
 
     And User sending the keys in the dialog content class
       | key | cc34 |
-      | value | 100 |
+      | valueConstans | 100 |
 
     And User click on the element in the dialog content class
       | saveButton |

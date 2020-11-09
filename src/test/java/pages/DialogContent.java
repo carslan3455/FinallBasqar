@@ -46,6 +46,9 @@ public class DialogContent extends _Parent {
     @FindBy (css = "ms-text-field[formcontrolname='key']>input")    private WebElement key;
     @FindBy (css = "ms-integer-field[formcontrolname='value']>input")    private WebElement valueConstans;
     @FindBy (xpath = "//span[text()='Category']") private WebElement category;
+    // todo new constanse value budget diger sekmesinde olan
+    // todo @FindBy (css = "ms-text-field[formcontrolname='value']>input")    private WebElement valueConstansBdgt;
+
     //Todo Not: buradan sonra category option ile secilecek, secimde general cıkarsa yeni bir drop down oluşuyor.
     // Yeni dropdown için aşağıdaki locator geliyor.
     @FindBy (xpath = "//span[text()='Subcategory']") private WebElement subcategory;
@@ -53,6 +56,9 @@ public class DialogContent extends _Parent {
     @FindBy (xpath = "//span[text()='Balance Type']") private WebElement balanceType;
     @FindBy (xpath = "//span[text()='Integration Codes']") private WebElement integrationCodes;
     @FindBy (xpath = "//span[text()='Currency']") private WebElement currency;
+    @FindBy (xpath = "(//button[@matbadgecolor='accent'])[2]") private WebElement addContraAcc;
+    // todo olmayabilir @FindBy (xpath = "(//mat-select[@formcontrolname='category'])[1]") private WebElement categoryAcc;
+
     @FindBy (css = "ms-text-field[formcontrolname='orderNo']>input") private WebElement orderNo;
     @FindBy (css = "input[placeholder='Expense accout code prefixes']")    private WebElement expenseAccPrefixes;
 

@@ -22,42 +22,23 @@ Feature: Create Edit and Delete Functionality for Budget
     And User click on the element in the dialog content class
       | addButton |
 
-    And User sending the keys in the dialog content class
-      | code | 123 |
-      | name | budgetAccounts5 |
-      | name | budgetAccounts5 |
+    And User click on the element in the dialog content class
+      | type |
+      | Group |
+      | balanceType |
+      | Debit |
+      | currency |
+      | EUR |
+      | formula |
+      | addButton |
+      | budgetType |
+      | current |
 
-    And Tarih yazilacak
-    |validForm|11/11/2011|
-
     And User sending the keys in the dialog content class
-      | key | cc34 |
-      | value | 100 |
+      | formulaList | ilk3harf |
 
     And User click on the element in the dialog content class
       | saveButton |
-
-    Then User should see success/error message
-      | successfully |
-
-    When User click on the element in the leftNav class
-      | humanResources  |
-      | setupHR         |
-      | salaryConstants |
-
-    Then User edit the element with value
-      | Group3SalaryConstans5 | editGroup3SalaryConstans5 |
-
-    Then User should see success/error message
-      | successfully |
-
-    When User click on the element in the leftNav class
-      | humanResources  |
-      | setupHR         |
-      | salaryConstants |
-
-    When User delete value
-      | editGroup3SalaryConstans5 |
 
     Then User should see success/error message
       | successfully |

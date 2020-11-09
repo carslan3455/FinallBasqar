@@ -45,6 +45,16 @@ public class DialogContent extends _Parent {
     @FindBy (css = "input[data-placeholder='Valid From']")    private WebElement validFrom;
     @FindBy (css = "ms-text-field[formcontrolname='key']>input")    private WebElement key;
     @FindBy (css = "ms-integer-field[formcontrolname='value']>input")    private WebElement valueConstans;
+    @FindBy (xpath = "//span[text()='Category']") private WebElement category;
+    //Todo Not: buradan sonra category option ile secilecek, secimde general cıkarsa yeni bir drop down oluşuyor.
+    // Yeni dropdown için aşağıdaki locator geliyor.
+    @FindBy (xpath = "//span[text()='Subcategory']") private WebElement subcategory;
+    @FindBy (xpath = "//span[text()='Type']") private WebElement type;
+    @FindBy (xpath = "//span[text()='Balance Type']") private WebElement balanceType;
+    @FindBy (xpath = "//span[text()='Integration Codes']") private WebElement integrationCodes;
+    @FindBy (xpath = "//span[text()='Currency']") private WebElement currency;
+    @FindBy (css = "ms-text-field[formcontrolname='orderNo']>input") private WebElement orderNo;
+    @FindBy (css = "input[placeholder='Expense accout code prefixes']")    private WebElement expenseAccPrefixes;
 
 
     public void findElementAndClickFunction(String elementName) {
@@ -63,6 +73,13 @@ public class DialogContent extends _Parent {
             case "country": myElement = country;break;
             case "option": myElement = option;break;
             case "userType": myElement = userType; break;
+            case "category": myElement = category; break;
+            case "subcategory": myElement = subcategory; break;
+            case "type": myElement = type; break;
+            case "balanceType": myElement = balanceType; break;
+            case "integrationCodes": myElement = integrationCodes; break;
+            case "currency": myElement = currency; break;
+            case "expenseAccPrefixes": myElement = expenseAccPrefixes; break;
             default:
                myElement=optionsList.get(randomSelect(optionsList)); break;
 
@@ -85,6 +102,8 @@ public class DialogContent extends _Parent {
             case "validFrom": myElement = validFrom; break;
             case "key": myElement = key; break;
             case "valueConstans": myElement = valueConstans; break;
+            case "orderNo": myElement = orderNo; break;
+            //TODO not: order no eşsiz olmalı, listeli bulunmamalı
 
         }
         sendKeysFunction(myElement,value);

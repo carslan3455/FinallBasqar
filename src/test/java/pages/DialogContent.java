@@ -34,7 +34,7 @@ public class DialogContent extends _Parent {
     @FindAll({ @FindBy (css = "tbody>tr>td:nth-child(2)") })  private List<WebElement> nameList;
     @FindBy(css = "button[type='submit']")    private WebElement yesButton;
     @FindBy(css = "mat-select[formcontrolname='id']")    private WebElement country;
-    @FindBy(css = "mat-option[role='option']")    private WebElement option;
+    // @FindBy(css = "mat-option[role='option']")    private WebElement option;
     @FindAll({ @FindBy(css = "mat-option[role='option']>span") })    private List<WebElement> optionsList;
     @FindBy (css = "#mat-chip-list-input-0")    private WebElement userType;
     @FindBy (css = "input[data-placeholder='Description']")    private WebElement discription;
@@ -45,6 +45,8 @@ public class DialogContent extends _Parent {
     @FindBy (css = "input[data-placeholder='Valid From']")    private WebElement validFrom;
     @FindBy (css = "ms-text-field[formcontrolname='key']>input")    private WebElement key;
     @FindBy (css = "ms-integer-field[formcontrolname='value']>input")    private WebElement valueConstans;
+    @FindBy (css = "ms-text-field[formcontrolname='title']>input")    private WebElement namePositionSalary;
+    @FindAll({ @FindBy (css = "input[name*='Formula']") })  private List<WebElement> formulaList;
     @FindBy (xpath = "//span[text()='Category']") private WebElement category;
     // todo new constanse value budget diger sekmesinde olan
     // todo @FindBy (css = "ms-text-field[formcontrolname='value']>input")    private WebElement valueConstansBdgt;
@@ -77,8 +79,9 @@ public class DialogContent extends _Parent {
             case "deleteButton": myElement = deleteButton;break;
             case "yesButton": myElement = yesButton;break;
             case "country": myElement = country;break;
-            case "option": myElement = option;break;
+           //  case "option": myElement = option;break;
             case "userType": myElement = userType; break;
+            case "namePositionSalary": myElement = namePositionSalary; break;
             case "category": myElement = category; break;
             case "subcategory": myElement = subcategory; break;
             case "type": myElement = type; break;
@@ -86,8 +89,7 @@ public class DialogContent extends _Parent {
             case "integrationCodes": myElement = integrationCodes; break;
             case "currency": myElement = currency; break;
             case "expenseAccPrefixes": myElement = expenseAccPrefixes; break;
-            default:
-               myElement=optionsList.get(randomSelect(optionsList)); break;
+            case "randomSelect": myElement=randomSelectFromList(optionsList);break;
 
 
         }

@@ -13,7 +13,7 @@ Feature: Creat and Delete Functionality for Subject Category
 
     Then User should login successfully
 
-  Scenario: Creat and Delete Country and City
+  Scenario: Creat and Delete Subject Category
 
     When User click on the element in the leftNav class
       | education         |
@@ -30,11 +30,10 @@ Feature: Creat and Delete Functionality for Subject Category
     And User click on the element in the dialog content class
       | saveButton |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
     When User click on the element in the leftNav class
-      | subject |
+      | subjects |
 
     And User click on the element in the dialog content class
       | addButton |
@@ -46,16 +45,15 @@ Feature: Creat and Delete Functionality for Subject Category
     And User click on the element in the dialog content class
       | subjectCategory |
       | MySubjectCat3   |
+      | styleSubjects   |
+      | randomSelect    |
       | saveButton      |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
     When User click on the element in the leftNav class
       | subjectCategories |
 
-    When User delete value
-      | MySubjectCat3 |
+    When User delete "MySubjectCat3"
 
-    Then User should see success/error message
-      | error |
+    Then User should see "error" message

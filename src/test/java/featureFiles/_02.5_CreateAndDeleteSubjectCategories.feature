@@ -16,26 +16,23 @@ Feature: Create And Delete Subject Categories
   Scenario:  Create and Delete Subject Categories
 
     When User click on the element in the leftNav class
-      | education      |
-      | setupEducation |
-      | subjectCategories   |
+      | education         |
+      | setupEducation    |
+      | subjectCategories |
 
     And User click on the element in the dialog content class
       | addButton |
 
     And User sending the keys in the dialog content class
-      | name | Group3Education5 |
-      | code | 123            |
+      | name | Group3NewCategories |
+      | code | 123              |
 
     And User click on the element in the dialog content class
       | saveButton |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
-    When User delete value
-      | Group3Education5 |
+    When User delete "Group3NewCategories"
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 

@@ -1,4 +1,4 @@
-Feature: Create and Delete Functionality for BudgetAccounts
+Feature: Create and Delete Functionality for Budget Accounts
 
   Background:
     Given Navigate to basqar
@@ -44,8 +44,7 @@ Feature: Create and Delete Functionality for BudgetAccounts
     And User click on the element in the dialog content class
       | saveButton |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
     And User click on the element in the dialog content class
       | contraAcc |
@@ -61,31 +60,31 @@ Feature: Create and Delete Functionality for BudgetAccounts
       | randomSelect |
 
     And User sending the keys in the dialog content class
-      | order       | 4      |
+      | orderNo       | 4      |
       | formulaList | Formul |
 
     And User click on the element in the dialog content class
       | addContraAcc |
       | saveButton   |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
     When User click on the element in the leftNav class
       | budget         |
       | budgetAccounts |
 
-    Then User edit the element with value
-      | Group3Asd | Group3NewAsd |
+    Then User edit "Group3Asd"
 
-    Then User should see success/error message
-      | successfully |
+    And User sending the keys in the dialog content class
+      | name | Group3NewAsd |
 
-    When User delete value
-      | Group3NewAsd |
+    And User click on the element in the dialog content class
+      | saveButton |
+    Then User should see "successfully" message
 
-    Then User should see success/error message
-      | successfully |
+    When User delete "Group3NewAsd"
+
+    Then User should see "successfully" message
 
 
 

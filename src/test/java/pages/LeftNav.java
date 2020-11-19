@@ -15,25 +15,30 @@ public class LeftNav extends _Parent{
 
     @FindBy(linkText = "Setup") private WebElement setup;
     @FindBy(linkText = "Parameters") private WebElement parameters;
-    @FindBy(linkText = "Countries") private WebElement countries;
+    @FindBy(css = "a[href='/countries/list']") private WebElement countries;   //   linkText = "Countries"  // linkText de scroll yapmiyor
     @FindBy(linkText = "Cities") private WebElement cities;
+
     @FindBy(linkText = "Education") private WebElement education;
     @FindBy(xpath = "(//span[text()='Setup'])[5]") private WebElement setupEducation;
-    @FindBy(linkText = "Subject Categories") private WebElement subjectCategories;
+    @FindBy(css = "a[href='/subject-categories/list']") private WebElement subjectCategories;   //   linkText = "Subject Categories"
     @FindBy(linkText = "Subjects") private WebElement subjects;
+
     @FindBy(linkText = "Human Resources") private WebElement humanResources;
-    @FindBy(css = "(//span[text()='Setup'])[3]") private WebElement setupHR;
+    @FindBy(xpath = "(//span[text()='Setup'])[3]") private WebElement setupHR;
     @FindBy(linkText = "Position Salary") private WebElement positionSalary;
     @FindBy(linkText = "Positions") private WebElement positions;
-    @FindBy(xpath = "(//span[text()='Reports'])[4]") private WebElement reports;
-    @FindBy(xpath = "(//span[text()='Setup'])[8]") private WebElement setupReports;
-    @FindBy(linkText = "Excel Template") private WebElement excelTemplate;
+
     @FindBy(linkText = "Salary Types") private WebElement salaryTypes;
     @FindBy(linkText = "Salary Modifiers") private WebElement salaryModifiers;
     @FindBy(linkText = "Salary Constants") private WebElement salaryConstants;
+
+    @FindBy(xpath = "(//span[text()='Reports'])[4]") private WebElement reports;
+    @FindBy(xpath = "(//span[text()='Setup'])[7]") private WebElement setupReports;
+    @FindBy(linkText = "Excel Template") private WebElement excelTemplate;
+
     @FindBy(linkText = "Budget") private WebElement budget;
     @FindBy(linkText = "Budget Accounts") private WebElement budgetAccounts;
-    @FindBy(xpath = "(//span[text()='Setup'])[8]") private WebElement setupbudget;
+    @FindBy(xpath = "(//span[text()='Setup'])[6]") private WebElement setupBudget;
     @FindBy(linkText = "Cost Centers") private WebElement costCenters;
 
     public void findElementAndClickFunction(String elementName) {
@@ -59,7 +64,7 @@ public class LeftNav extends _Parent{
             case "salaryConstants": myElement = salaryConstants;break;
             case "budget": myElement = budget;break;
             case "budgetAccounts": myElement = budgetAccounts;break;
-            case "setupbudget": myElement = setupbudget;break;
+            case "setupBudget": myElement = setupBudget;break;
             case "costCenters": myElement = costCenters;break;
 
         }

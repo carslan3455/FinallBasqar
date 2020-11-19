@@ -1,10 +1,7 @@
 package stepDefinitions;
 
 import cucumber.api.DataTable;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import cucumber.api.java.en.*;
 import org.openqa.selenium.WebDriver;
 import pages.DialogContent;
 import utilities.Driver;
@@ -39,8 +36,6 @@ public class _01_LoginSteps {
             //  System.out.println(elementsNameAndValue.get(i).get(0));   // elemanin adi
             //  System.out.println(elementsNameAndValue.get(i).get(1));   // gonderilecek deger value
             dialogContent.findElementAndSendKeysFunction(elementsNameAndValue.get(i).get(0), elementsNameAndValue.get(i).get(1));
-
-
         }
     }
 
@@ -52,7 +47,6 @@ public class _01_LoginSteps {
 
             System.out.println(  elementsToClick.get(i)  );
             dialogContent.findElementAndClickFunction(elementsToClick.get(i));
-
         }
     }
 
@@ -62,6 +56,4 @@ public class _01_LoginSteps {
         dialogContent.findElementAndFindVerifyContainsText("dashboard","Dashboard");
 
     }
-
-
 }

@@ -30,12 +30,8 @@ Feature: Create and Delete Functionality for Countries
     And User click on the element in the dialog content class
       | saveButton |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
-    When User delete value
-      | Group3Country5 |
+    When User delete "Group3Country5"
 
-    Then User should see success/error message
-      | successfully |
-
+    Then User should see "successfully" message

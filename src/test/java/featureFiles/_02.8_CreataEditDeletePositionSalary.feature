@@ -13,64 +13,69 @@ Feature: Create Edit and Delete Functionality for Human Resources
 
     Then User should login successfully
 
-  Scenario:  Create , Edit and Delete Position Salary
+  Scenario:  Create, Edit and Delete Position Salary
 
     When User click on the element in the leftNav class
       | humanResources |
       | setupHR        |
-      | positionSalary|
+      | positionSalary |
 
     And User click on the element in the dialog content class
       | addButton |
 
     And User sending the keys in the dialog content class
-      | name | Group3PositionSalary5 |
-      | code | 123            |
+      | namePositionSalary | Group3NewPositionSalary |
 
     And User click on the element in the dialog content class
       | saveButton |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
-    Then User edit the element with value
-    |Group3PositionSalary5|editPositionSalary5|
+    Then User edit "Group3NewPositionSalary"
 
-    Then User should see success/error message
-      | successfully |
+    And User sending the keys in the dialog content class
+      | namePositionSalary | editedPositionSalary |
 
-    When User delete value
-      | editPositionSalary5 |
+    And User click on the element in the dialog content class
+      | saveButton |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
-    Scenario: Create , Edit and Delete Position
+    When User delete "editedPositionSalary"
 
-      When User click on the element in the leftNav class
-        | humanResources |
-        | setupHR        |
-        | position      |
+    Then User should see "successfully" message
 
-      And User click on the element in the dialog content class
-        | addButton |
 
-      And User sending the keys in the dialog content class
-        | name | Group3Position5 |
-        | code | 123            |
+  Scenario:  Create and Delete Positions
 
-      And User click on the element in the dialog content class
-        | saveButton |
+    When User click on the element in the leftNav class
+      | humanResources |
+      | setupHR        |
+      | positions |
 
-      Then User should see success/error message
-        | successfully |
+    And User click on the element in the dialog content class
+      | addButton |
 
-      Then User edit the element with value
-        |Group3Position5|editPosition5|
+    And User sending the keys in the dialog content class
+      | name | Group3NewPosition |
+      | shortName | G3NP         |
 
-      When User delete value
-        | editPosition5 |
+    And User click on the element in the dialog content class
+      | saveButton |
 
-      Then User should see success/error message
-        | successfully |
+    Then User should see "successfully" message
 
+    Then User edit "Group3NewPosition"
+
+    And User sending the keys in the dialog content class
+      | name | editedPosition |
+      | shortName | G3NnewP         |
+
+    And User click on the element in the dialog content class
+      | saveButton |
+
+    Then User should see "successfully" message
+
+    When User delete "editedPosition"
+
+    Then User should see "successfully" message

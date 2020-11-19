@@ -24,7 +24,7 @@ Feature: Create Edit and Delete Functionality for Human Resources
       | addButton |
 
     And User sending the keys in the dialog content class
-      | discription | CocukYardimi5 |
+      | description | CocukYardimi |
       | variable    | odenek        |
       | priority    | 1             |
       | amount      | 100           |
@@ -32,28 +32,32 @@ Feature: Create Edit and Delete Functionality for Human Resources
     And User click on the element in the dialog content class
       | saveButton |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
     When User click on the element in the leftNav class
       | humanResources  |
       | setupHR         |
       | salaryModifiers |
 
-    Then User edit the element with value
-      | CocukYardimi5 | editCocukYardimi5 |
+    Then User edit "CocukYardimi"
 
-    Then User should see success/error message
-      | successfully |
+    And User sending the keys in the dialog content class
+      | description | editedCocukYardimi |
+      | variable    | ecck               |
+      | priority    | 13                 |
+      | amount      | 300                |
+
+    And User click on the element in the dialog content class
+      | saveButton |
+
+    Then User should see "successfully" message
 
     When User click on the element in the leftNav class
       | humanResources  |
       | setupHR         |
       | salaryModifiers |
 
-    When User delete value
-      | editCocukYardimi5 |
+    When User delete "editedCocukYardimi"
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 

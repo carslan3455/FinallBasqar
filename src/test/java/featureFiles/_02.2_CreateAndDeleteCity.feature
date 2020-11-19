@@ -23,7 +23,7 @@ Feature: Creat and Delete Functionality for Cities
     And User click on the element in the dialog content class
       | addButton     |
       | country       |
-      | countryRandom |
+      | randomSelect |
 
     And User sending the keys in the dialog content class
       | name | Group3City5 |
@@ -31,12 +31,9 @@ Feature: Creat and Delete Functionality for Cities
     And User click on the element in the dialog content class
       | saveButton |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
-    When User delete value
-      | Group3City5 |
+    When User delete "Group3City5"
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 

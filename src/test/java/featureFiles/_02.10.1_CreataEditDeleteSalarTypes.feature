@@ -24,25 +24,26 @@ Feature: Create Edit and Delete Functionality for Human Resources
       | addButton |
 
     And User sending the keys in the dialog content class
-      | name | Group3SalaryTypes5 |
+      | name | Group3NewSalaryType |
 
     And User click on the element in the dialog content class
       | userType       |
-      | userTypeRandom |
+      | randomSelect |
       | saveButton     |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
-    Then User edit the element with value
-      | Group3SalaryTypes5 | editSalaryTypes5 |
+    Then User edit "Group3NewSalaryType"
 
-    Then User should see success/error message
-      | successfully |
+    And User sending the keys in the dialog content class
+      | name | editedNewSalaryType |
 
-    When User delete value
-      | editSalaryTypes5 |
+    And User click on the element in the dialog content class
+      | saveButton |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
+
+    When User delete "editedNewSalaryType"
+
+    Then User should see "successfully" message
 

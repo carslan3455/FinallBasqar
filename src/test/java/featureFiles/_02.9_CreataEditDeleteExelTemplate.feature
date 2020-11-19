@@ -1,4 +1,4 @@
-Feature: Create Edit and Delete Functionality for Human Resources
+Feature: Create Edit and Delete Functionality for Reports
 
   Background:
     Given Navigate to basqar
@@ -13,35 +13,41 @@ Feature: Create Edit and Delete Functionality for Human Resources
 
     Then User should login successfully
 
-  Scenario:  Create , Edit and Delete Position Salary
+  Scenario:  Create , Edit and Delete Excel Template
 
     When User click on the element in the leftNav class
       | reports |
       | setupReports|
-      | exelTemplate|
+      | excelTemplate|
 
     And User click on the element in the dialog content class
       | addButton |
 
     And User sending the keys in the dialog content class
-      | name | Group3ExcelTemplate5 |
-
+      | name | Group3ExcelTemplate |
 
     And User click on the element in the dialog content class
       | saveButton |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
-    Then User edit the element with value
-    |Group3ExcelTemplate5|editExcelTemplate5|
+    And User click on the element in the dialog content class
+      | closeDialog |
 
-    Then User should see success/error message
-      | successfully |
+    Then User edit "Group3NewExcelTemplete"
 
-    When User delete value
-      | editExcelTemplate5 |
+    And User sending the keys in the dialog content class
+      | name | Group3EditedExcelTemplete |
 
-    Then User should see success/error message
-      | successfully |
+    And User click on the element in the dialog content class
+      | saveButton |
+
+    Then User should see "successfully" message
+
+    And User click on the element in the dialog content class
+      | closeDialog |
+
+    When User delete "Group3EditedExcelTemplete"
+
+    Then User should see "successfully" message
 

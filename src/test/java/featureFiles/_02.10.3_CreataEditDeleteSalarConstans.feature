@@ -22,42 +22,44 @@ Feature: Create Edit and Delete Functionality for Human Resources
 
     And User click on the element in the dialog content class
       | addButton |
+      | validFrom |
+      | selectDate |
 
+    #      TODO Alttaki tarihe çift tıklamak gerekiyor.
     And User sending the keys in the dialog content class
-      | nameConstans | Group3SalaryConstans5 |
-
-    And Tarih yazilacak
-    |validFrom|11/11/2011|
-
-    And User sending the keys in the dialog content class
-      | key | cc34 |
-      | valueConstans | 100 |
+      | nameConstants  | isim       |
+      | key           | a12        |
+      | valueConstants | 100        |
 
     And User click on the element in the dialog content class
       | saveButton |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
     When User click on the element in the leftNav class
       | humanResources  |
       | setupHR         |
       | salaryConstants |
 
-    Then User edit the element with value
-      | Group3SalaryConstans5 | editGroup3SalaryConstans5 |
+    Then User edit "isim"
 
-    Then User should see success/error message
-      | successfully |
+    And User sending the keys in the dialog content class
+      | nameConstants  | editedisim |
+#      TODO Alttaki tarihe çift tıklamak gerekiyor.
+      | validFrom     | 11/10/2011 |
+      | key           | a12        |
+      | valueConstants | 100        |
+
+    And User click on the element in the dialog content class
+      | saveButton |
+
+    Then User should see "successfully" message
 
     When User click on the element in the leftNav class
       | humanResources  |
       | setupHR         |
       | salaryConstants |
 
-    When User delete value
-      | editGroup3SalaryConstans5 |
+    When User delete "editedisim"
 
-    Then User should see success/error message
-      | successfully |
-
+    Then User should see "successfully" message

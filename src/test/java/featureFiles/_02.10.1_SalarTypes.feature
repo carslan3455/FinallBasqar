@@ -13,51 +13,37 @@ Feature: Create Edit and Delete Functionality for Human Resources
 
     Then User should login successfully
 
-  Scenario:  Create , Edit and Delete Salary Modifiers
+  Scenario:  Create , Edit and Delete Salary Types
 
     When User click on the element in the leftNav class
-      | humanResources  |
-      | setupHR         |
-      | salaryModifiers |
+      | humanResources |
+      | setupHR        |
+      | salaryTypes    |
 
     And User click on the element in the dialog content class
       | addButton |
 
     And User sending the keys in the dialog content class
-      | description | CocukYardimi |
-      | variable    | odenek        |
-      | priority    | 1             |
-      | amount      | 100           |
+      | name | Group3NewSalaryType |
 
     And User click on the element in the dialog content class
-      | saveButton |
+      | userType     |
+      | randomSelect |
+      | saveButton   |
 
     Then User should see "successfully" message
 
-    When User click on the element in the leftNav class
-      | humanResources  |
-      | setupHR         |
-      | salaryModifiers |
-
-    Then User edit "CocukYardimi"
+    Then User edit "Group3NewSalaryType"
 
     And User sending the keys in the dialog content class
-      | description | editedCocukYardimi |
-      | variable    | ecck               |
-      | priority    | 13                 |
-      | amount      | 300                |
+      | name | editedNewSalaryType |
 
     And User click on the element in the dialog content class
       | saveButton |
 
     Then User should see "successfully" message
 
-    When User click on the element in the leftNav class
-      | humanResources  |
-      | setupHR         |
-      | salaryModifiers |
-
-    When User delete "editedCocukYardimi"
+    When User delete "editedNewSalaryType"
 
     Then User should see "successfully" message
 

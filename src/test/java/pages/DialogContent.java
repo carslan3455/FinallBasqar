@@ -28,7 +28,7 @@ public class DialogContent extends _Parent {
     @FindBy (xpath = " //ms-add-button[contains(@tooltip,'.ADD')]//button")    private WebElement addButton;
     @FindBy (css = "ms-text-field[formcontrolname='name']>input")    private WebElement name;
     @FindBy (css = "ms-text-field[formcontrolname='code']>input")    private WebElement code;
-    @FindBy (css = "ms-save-button.ng-star-inserted")    private WebElement saveButton;
+    @FindBy(xpath = "//ms-save-button//button")   private WebElement saveButton;
     @FindBy (css = "div#toast-container")    private WebElement message;      //   div[role='allertdialog']
     @FindAll({ @FindBy(css = "div#toast-container") })    private List<WebElement> messageList;
     @FindBy (css = "ms-delete-button.ng-star-inserted")    private WebElement deleteButton;
@@ -44,7 +44,7 @@ public class DialogContent extends _Parent {
     @FindBy (css = "input[data-placeholder='Variable']")    private WebElement variable;
     @FindBy (css = "input[data-placeholder='Priority']")    private WebElement priority;
     @FindBy (css = "input[data-placeholder='Amount']")    private WebElement amount;
-    @FindBy (css = "input[data-placeholder='Amount']")    private WebElement nameConstants;
+    @FindBy (css = "input[formcontrolname='name']")    private WebElement nameConstants;
     @FindBy (css = "input[data-placeholder='Valid From']")    private WebElement validFrom;
     @FindBy (css = "ms-text-field[formcontrolname='key']>input")    private WebElement key;
     @FindBy (css = "ms-integer-field[formcontrolname='value']>input")    private WebElement valueConstants;
@@ -56,7 +56,7 @@ public class DialogContent extends _Parent {
 
     //Todo Not: buradan sonra category option ile secilecek, secimde general cıkarsa yeni bir drop down oluşuyor.
     // Yeni dropdown için aşağıdaki locator geliyor.
-    @FindBy (xpath = "//span[text()='Subcategory']") private WebElement subjectCategory;
+    @FindBy (xpath = "//span[text()='Subject Category']") private WebElement subjectCategory;
     @FindBy (xpath = "//span[text()='Type']") private WebElement type;
     @FindBy (xpath = "//span[text()='Balance Type']") private WebElement balanceType;
     @FindBy (xpath = "//span[text()='Integration Codes']") private WebElement integrationCodes;
@@ -69,7 +69,8 @@ public class DialogContent extends _Parent {
     @FindBy (xpath = "//span[text()='Add']") private WebElement addButtonCost;
     @FindBy (css = "mat-select[formcontrolname='value']") private WebElement styleSubjects;
     @FindBy(css = "ms-text-field[formcontrolname='shortName']>input")    private WebElement shortName;
-    @FindBy (css = " button[aria-label='Close dialog']")    private WebElement closeDialog;
+    @FindBy (css = "button[aria-label='Close dialog']")    private WebElement closeDialog;
+    @FindBy (css = "td[aria-label='November 11, 2020']")    private WebElement selectDate;
 
     // Todo bunlara bakilacak
 //    formula
@@ -81,8 +82,8 @@ public class DialogContent extends _Parent {
     public void findElementAndClickFunction(String elementName) {
 
         switch (elementName) {
-            case "loginBtn": myElement = loginButton; break;
-            case "gotItBtn":
+            case "loginButton": myElement = loginButton; break;
+            case "gotItButton":
                 if (gotItBtns.size() == 0)
                 return;
                 myElement = gotItButton;
@@ -96,6 +97,7 @@ public class DialogContent extends _Parent {
             case "userType": myElement = userType; break;
             case "category": myElement = category; break;
             case "subjectCategory": myElement = subjectCategory; break;
+            case "validFrom": myElement = validFrom; break;
             case "type": myElement = type; break;
             case "balanceType": myElement = balanceType; break;
             case "integrationCodes": myElement = integrationCodes; break;
@@ -105,6 +107,7 @@ public class DialogContent extends _Parent {
             case "addButtonCost": myElement = addButtonCost; break;
             case "styleSubjects": myElement = styleSubjects; break;
             case "closeDialog": myElement = closeDialog; break;
+            case "selectDate": myElement = selectDate; break;
 
             // Option Listlerde text gonderdigimiz value secmek icin yazdik
             default:
@@ -130,7 +133,6 @@ public class DialogContent extends _Parent {
             case "priority": myElement = priority; break;
             case "amount": myElement = amount; break;
             case "nameConstants": myElement = nameConstants; break;
-            case "validFrom": myElement = validFrom; break;
             case "key": myElement = key; break;
             case "valueConstants": myElement = valueConstants; break;
             case "orderNo": myElement = orderNo; break;

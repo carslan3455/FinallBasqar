@@ -1,4 +1,4 @@
-Feature: Create And Delete Subjects
+Feature: Create Edit and Delete Functionality for Human Resources
 
   Background:
     Given Navigate to basqar
@@ -13,27 +13,38 @@ Feature: Create And Delete Subjects
 
     Then User should login successfully
 
-  Scenario:  Create and Delete Subjects
+  Scenario:  Create , Edit and Delete Salary Constants
 
     When User click on the element in the leftNav class
-      | education      |
-      | setupEducation |
-      | subjects       |
+      | humanResources  |
+      | setupHR         |
+      | salaryConstants |
 
     And User click on the element in the dialog content class
-      | addButton |
+      | addButton  |
+      | validFrom  |
+      | selectDate |
 
     And User sending the keys in the dialog content class
-      | name | Group3Subject |
-      | code | 123            |
+      | nameConstants  | isim |
+      | key            | a12  |
+      | valueConstants | 100  |
 
     And User click on the element in the dialog content class
-      | subjectCategory |
-      | randomSelect  |
-      | saveButton      |
+      | saveButton |
 
     Then User should see "successfully" message
 
-    When User delete "Group3Subject"
+    Then User edit "isim"
+
+    And User sending the keys in the dialog content class
+      | nameConstants | editedisim |
+
+    And User click on the element in the dialog content class
+      | saveButton |
+
+    Then User should see "successfully" message
+
+    When User delete "editedisim"
 
     Then User should see "successfully" message

@@ -1,4 +1,4 @@
-Feature: Creat and Delete Functionality for Subject Category
+Feature: Create Edit and Delete Functionality for Human Resources
 
   Background:
     Given Navigate to basqar
@@ -13,19 +13,21 @@ Feature: Creat and Delete Functionality for Subject Category
 
     Then User should login successfully
 
-  Scenario: Creat and Delete Subject Category
+  Scenario:  Create , Edit and Delete Salary Modifiers
 
     When User click on the element in the leftNav class
-      | education         |
-      | setupEducation    |
-      | subjectCategories |
+      | humanResources  |
+      | setupHR         |
+      | salaryModifiers |
 
     And User click on the element in the dialog content class
       | addButton |
 
     And User sending the keys in the dialog content class
-      | name | MySubjectCat3 |
-      | code | 123           |
+      | description | CocukYardimi |
+      | variable    | odenek       |
+      | priority    | 33           |
+      | amount      | 100          |
 
     And User click on the element in the dialog content class
       | saveButton |
@@ -33,27 +35,29 @@ Feature: Creat and Delete Functionality for Subject Category
     Then User should see "successfully" message
 
     When User click on the element in the leftNav class
-      | subjects |
+      | humanResources  |
+      | setupHR         |
+      | salaryModifiers |
 
-    And User click on the element in the dialog content class
-      | addButton |
+    Then User edit "CocukYardimi"
 
     And User sending the keys in the dialog content class
-      | name | Group3Subject5 |
-      | code | 123            |
+      | description | editedCocukYardimi |
+      | variable    | ecck               |
+      | priority    | 13                 |
+      | amount      | 300                |
 
     And User click on the element in the dialog content class
-      | subjectCategory |
-      | MySubjectCat3   |
-      | styleSubjects   |
-      | randomSelect    |
-      | saveButton      |
+      | saveButton |
 
     Then User should see "successfully" message
 
     When User click on the element in the leftNav class
-      | subjectCategories |
+      | humanResources  |
+      | setupHR         |
+      | salaryModifiers |
 
-    When User delete "MySubjectCat3"
+    When User delete "editedCocukYardimi"
 
-    Then User should see "error" message
+    Then User should see "successfully" message
+

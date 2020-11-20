@@ -13,33 +13,33 @@ public class LeftNav extends _Parent{
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(linkText = "Setup") private WebElement setup;
-    @FindBy(linkText = "Parameters") private WebElement parameters;
+    @FindBy(xpath = "//span[text()='Setup']") private WebElement setup;
+    @FindBy(xpath = "//span[text()='Parameters']") private WebElement parameters;
     @FindBy(css = "a[href='/countries/list']") private WebElement countries;   //   linkText = "Countries"  // linkText de scroll yapmiyor
-    @FindBy(linkText = "Cities") private WebElement cities;
+    @FindBy(xpath = "//span[text()='Cities']") private WebElement cities;
 
-    @FindBy(linkText = "Education") private WebElement education;
+    @FindBy(xpath = "//span[text()='Education']") private WebElement education;
     @FindBy(xpath = "(//span[text()='Setup'])[5]") private WebElement setupEducation;
     @FindBy(css = "a[href='/subject-categories/list']") private WebElement subjectCategories;   //   linkText = "Subject Categories"
-    @FindBy(linkText = "Subjects") private WebElement subjects;
+    @FindBy(xpath = "//span[text()='Subjects']") private WebElement subjects;
 
-    @FindBy(linkText = "Human Resources") private WebElement humanResources;
+    @FindBy(xpath = "//span[text()='Human Resources']") private WebElement humanResources;
     @FindBy(xpath = "(//span[text()='Setup'])[3]") private WebElement setupHR;
-    @FindBy(linkText = "Position Salary") private WebElement positionSalary;
-    @FindBy(linkText = "Positions") private WebElement positions;
+    @FindBy(xpath = "//span[text()='Position Salary']") private WebElement positionSalary;
+    @FindBy(xpath = "//span[text()='Positions']") private WebElement positions;
 
-    @FindBy(linkText = "Salary Types") private WebElement salaryTypes;
-    @FindBy(linkText = "Salary Modifiers") private WebElement salaryModifiers;
-    @FindBy(linkText = "Salary Constants") private WebElement salaryConstants;
+    @FindBy(xpath = "//span[text()='Salary Types']") private WebElement salaryTypes;
+    @FindBy(xpath = "//span[text()='Salary Modifiers']") private WebElement salaryModifiers;
+    @FindBy(xpath = "//span[text()='Salary Constants']") private WebElement salaryConstants;
 
     @FindBy(xpath = "(//span[text()='Reports'])[4]") private WebElement reports;
     @FindBy(xpath = "(//span[text()='Setup'])[7]") private WebElement setupReports;
-    @FindBy(linkText = "Excel Template") private WebElement excelTemplate;
+    @FindBy(xpath = "//span[text()='Excel Template']") private WebElement excelTemplate;
 
-    @FindBy(linkText = "Budget") private WebElement budget;
-    @FindBy(linkText = "Budget Accounts") private WebElement budgetAccounts;
+    @FindBy(xpath = "//span[text()='Budget']") private WebElement budget;
+    @FindBy(xpath = "//span[text()='Budget Accounts']") private WebElement budgetAccounts;
     @FindBy(xpath = "(//span[text()='Setup'])[6]") private WebElement setupBudget;
-    @FindBy(linkText = "Cost Centers") private WebElement costCenters;
+    @FindBy(xpath = "//span[text()='Cost Centers']") private WebElement costCenters;
 
     public void findElementAndClickFunction(String elementName) {
 

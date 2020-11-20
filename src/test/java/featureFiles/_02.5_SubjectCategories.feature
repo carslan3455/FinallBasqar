@@ -1,4 +1,4 @@
-Feature: Create Edit and Delete Functionality for Reports
+Feature: Create And Delete Subject Categories
 
   Background:
     Given Navigate to basqar
@@ -13,41 +13,26 @@ Feature: Create Edit and Delete Functionality for Reports
 
     Then User should login successfully
 
-  Scenario:  Create , Edit and Delete Excel Template
+  Scenario:  Create and Delete Subject Categories
 
     When User click on the element in the leftNav class
-      | reports |
-      | setupReports|
-      | excelTemplate|
+      | education         |
+      | setupEducation    |
+      | subjectCategories |
 
     And User click on the element in the dialog content class
       | addButton |
 
     And User sending the keys in the dialog content class
-      | name | Group3ExcelTemplate |
+      | name | Group3NewCategories |
+      | code | abc                 |
 
     And User click on the element in the dialog content class
       | saveButton |
 
     Then User should see "successfully" message
 
-    And User click on the element in the dialog content class
-      | closeDialog |
-
-    Then User edit "Group3NewExcelTemplete"
-
-    And User sending the keys in the dialog content class
-      | name | Group3EditedExcelTemplete |
-
-    And User click on the element in the dialog content class
-      | saveButton |
-
-    Then User should see "successfully" message
-
-    And User click on the element in the dialog content class
-      | closeDialog |
-
-    When User delete "Group3EditedExcelTemplete"
+    When User delete "Group3NewCategories"
 
     Then User should see "successfully" message
 

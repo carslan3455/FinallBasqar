@@ -1,4 +1,4 @@
-Feature: Create And Delete Subject Categories
+Feature: Create And Delete Subjects
 
   Background:
     Given Navigate to basqar
@@ -13,26 +13,29 @@ Feature: Create And Delete Subject Categories
 
     Then User should login successfully
 
-  Scenario:  Create and Delete Subject Categories
+  Scenario:  Create and Delete Subjects
 
     When User click on the element in the leftNav class
-      | education         |
-      | setupEducation    |
-      | subjectCategories |
+      | education      |
+      | setupEducation |
+      | subjects       |
 
     And User click on the element in the dialog content class
       | addButton |
 
     And User sending the keys in the dialog content class
-      | name | Group3NewCategories |
-      | code | 123              |
+      | name | Group3Subject |
+      | code | 123           |
 
     And User click on the element in the dialog content class
-      | saveButton |
+      | subjectCategory |
+      | randomSelect    |
+      | styleSubjects   |
+      | randomSelect    |
+      | saveButton      |
 
     Then User should see "successfully" message
 
-    When User delete "Group3NewCategories"
+    When User delete "Group3Subject"
 
     Then User should see "successfully" message
-

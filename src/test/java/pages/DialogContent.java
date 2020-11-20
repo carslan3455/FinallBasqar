@@ -46,8 +46,8 @@ public class DialogContent extends _Parent {
     @FindBy (css = "input[data-placeholder='Amount']")    private WebElement amount;
     @FindBy (css = "input[formcontrolname='name']")    private WebElement nameConstants;
     @FindBy (css = "input[data-placeholder='Valid From']")    private WebElement validFrom;
-    @FindBy (css = "ms-text-field[formcontrolname='key']>input")    private WebElement key;
-    @FindBy (css = "ms-integer-field[formcontrolname='value']>input")    private WebElement valueConstants;
+    @FindBy (css = "ms-text-field[formcontrolname='key']")    private WebElement key;
+    @FindBy (css = "ms-text-field[formcontrolname='value']")    private WebElement valueConstants;
     @FindBy (css = "ms-text-field[formcontrolname='title']>input")    private WebElement namePositionSalary;
     @FindAll({ @FindBy (css = "input[name*='Formula']") })  private List<WebElement> formulaList;
     @FindBy (xpath = "//span[text()='Category']") private WebElement category;
@@ -71,6 +71,7 @@ public class DialogContent extends _Parent {
     @FindBy(css = "ms-text-field[formcontrolname='shortName']>input")    private WebElement shortName;
     @FindBy (css = "button[aria-label='Close dialog']")    private WebElement closeDialog;
     @FindBy (css = "td[aria-label='November 11, 2020']")    private WebElement selectDate;
+    @FindBy (xpath = "(//div[@class='mat-tab-label-content'])[2]")    private WebElement constants;
 
     // Todo bunlara bakilacak
 //    formula
@@ -108,6 +109,7 @@ public class DialogContent extends _Parent {
             case "styleSubjects": myElement = styleSubjects; break;
             case "closeDialog": myElement = closeDialog; break;
             case "selectDate": myElement = selectDate; break;
+            case "constants": myElement = constants; break;
 
             // Option Listlerde text gonderdigimiz value secmek icin yazdik
             default:

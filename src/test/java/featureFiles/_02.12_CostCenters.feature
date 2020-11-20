@@ -37,14 +37,15 @@ Feature: Create and Delete Functionality for Cost Centers
     And User click on the element in the dialog content class
       | expenseAccPrefixes |
       | randomSelect       |
+      | constants          |
 
     And User sending the keys in the dialog content class
-      | key           | 333   |
-      | valueConstans | Grup3 |
+      | key            | 333   |
+      | valueConstants | Grup3 |
 
     And User click on the element in the dialog content class
       | addButtonCost |
-      | saveButton |
+      | saveButton    |
 
     Then User should see "successfully" message
 
@@ -52,7 +53,7 @@ Feature: Create and Delete Functionality for Cost Centers
 
     And User sending the keys in the dialog content class
       | name | edit3NewCostCenters |
-      | code | 123              |
+      | code | 123                 |
 
     And User click on the element in the dialog content class
       | type         |

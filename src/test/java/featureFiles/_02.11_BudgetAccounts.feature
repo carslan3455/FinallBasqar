@@ -23,8 +23,8 @@ Feature: Create and Delete Functionality for Budget Accounts
       | addButton |
 
     And User sending the keys in the dialog content class
-      | code | 123 |
-      | name | Group3Asd |
+      | code | 2.1.19  |
+      | name | Group3A |
 
     And User click on the element in the dialog content class
       | type        |
@@ -34,38 +34,42 @@ Feature: Create and Delete Functionality for Budget Accounts
       | currency    |
       | EUR         |
       | formula     |
-      | addButton   |
+      | addFormula  |
+      | maximizes   |
       | budgetType  |
       | current     |
 
-    And User sending the keys in the dialog content class
+    And User sending the keys List in the dialog content class
       | formulaList | JAN |
 
     And User click on the element in the dialog content class
-      | saveButton |
+      | saveFormula |
 
     Then User should see "successfully" message
 
     And User click on the element in the dialog content class
-      | contraAcc |
-      | addButton |
+      | contraAcc    |
+      | addContraAcc |
 
     And User sending the keys in the dialog content class
       | codeAcc | 1010 |
 
     And User click on the element in the dialog content class
       | budgetType   |
-      | randomSelect |
-      | balanceType  |
-      | randomSelect |
+      | Current      |
+      | balanceType2 |
+      | Debit        |
+      | maximizes    |
 
     And User sending the keys in the dialog content class
-      | orderNo       | 4      |
+      | order | 4 |
+
+    And User sending the keys List in the dialog content class
       | formulaList | Formul |
 
     And User click on the element in the dialog content class
-      | addContraAcc |
-      | saveButton   |
+      | addButtonContAcc |
+      | saveButton       |
 
     Then User should see "successfully" message
 
@@ -73,14 +77,31 @@ Feature: Create and Delete Functionality for Budget Accounts
       | budget         |
       | budgetAccounts |
 
-    Then User edit "Group3Asd"
+    And User sending the keys in the dialog content class
+      | searchName | Group3A |
+
+    And User click on the element in the dialog content class
+      | search |
+
+    Then User edit "Group3A"
 
     And User sending the keys in the dialog content class
       | name | Group3NewAsd |
 
     And User click on the element in the dialog content class
       | saveButton |
+
     Then User should see "successfully" message
+
+    When User click on the element in the leftNav class
+      | budget         |
+      | budgetAccounts |
+
+    And User sending the keys in the dialog content class
+      | searchName | Group3NewAsd |
+
+    And User click on the element in the dialog content class
+      | search |
 
     When User delete "Group3NewAsd"
 

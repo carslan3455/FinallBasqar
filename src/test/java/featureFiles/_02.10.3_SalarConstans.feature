@@ -21,9 +21,14 @@ Feature: Create Edit and Delete Functionality for Human Resources
       | salaryConstants |
 
     And User click on the element in the dialog content class
-      | addButton  |
-      | validFrom  |
-      | selectDate |
+      | addButton |
+      | validFrom |
+
+    And User sending the keys in the dialog content class
+      | validFrom | 12/11/2018 |
+
+    And User click on the element in the dialog content class
+      | closeDate |
 
     And User sending the keys in the dialog content class
       | nameConstants  | isim |
@@ -37,8 +42,20 @@ Feature: Create Edit and Delete Functionality for Human Resources
 
     Then User edit "isim"
 
+    And User click on the element in the dialog content class
+      | validFrom |
+
     And User sending the keys in the dialog content class
-      | nameConstants | editedisim |
+      | validFrom | 11/02/2020 |
+
+    And User click on the element in the dialog content class
+      | closeDate |
+
+    And User sending the keys in the dialog content class
+      | nameConstants  | editedisim |
+      | key            | a13        |
+      | valueConstants | 200        |
+
 
     And User click on the element in the dialog content class
       | saveButton |

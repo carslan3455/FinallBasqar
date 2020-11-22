@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import cucumber.api.DataTable;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import pages.DialogContent;
@@ -44,6 +45,15 @@ public class _02_CountrySteps {
     public void userEdit(String value) {
 
         dialogContent.editFunction(value);
+    }
+
+    @And("^User sending the keys List in the dialog content class$")
+    public void userSendingTheKeysListInTheDialogContentClass(DataTable elements) {
+        List<String> list=elements.asList(String.class);
+
+        for (int i = 0; i <list.size()/2 ; i++) {
+            dialogContent.findElementListAndSendKeysFunction(list.get(0),list.get(1));
+        }
     }
 }
 

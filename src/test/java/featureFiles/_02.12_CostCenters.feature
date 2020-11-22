@@ -24,8 +24,8 @@ Feature: Create and Delete Functionality for Cost Centers
       | addButton |
 
     And User sending the keys in the dialog content class
-      | name | Grup3CostCenters |
-      | code | 123              |
+      | name | CostCentersGrup3 |
+      | code | 123456           |
 
     And User click on the element in the dialog content class
       | type         |
@@ -49,11 +49,11 @@ Feature: Create and Delete Functionality for Cost Centers
 
     Then User should see "successfully" message
 
-    Then User edit "Grup3CostCenters"
+    Then User edit "CostCentersGrup3"
 
     And User sending the keys in the dialog content class
       | name | edit3NewCostCenters |
-      | code | 123                 |
+      | code | 12345               |
 
     And User click on the element in the dialog content class
       | type         |

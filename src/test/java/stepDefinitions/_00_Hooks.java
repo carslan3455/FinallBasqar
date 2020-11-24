@@ -31,7 +31,7 @@ public class _00_Hooks {
         String strDate = formater.format(now);
         System.out.println("Cevirmeden onceki hali : " + strDate);
 
-        if (scenario.getStatus() == "falled"){
+        if (scenario.getStatus() == "failed"){
 
             String scenarioName = scenario.getName();
             strDate = strDate.replace(":"," ");

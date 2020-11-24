@@ -33,6 +33,12 @@ Feature: Create Edit and Delete Functionality for Human Resources
 
     Then User should see "successfully" message
 
+    And User sending the keys in the dialog content class
+      | searchName | Group3NewSalaryType |
+
+    And User click on the element in the dialog content class
+      | search |
+
     Then User edit "Group3NewSalaryType"
 
     And User sending the keys in the dialog content class
@@ -42,6 +48,12 @@ Feature: Create Edit and Delete Functionality for Human Resources
       | saveButton |
 
     Then User should see "successfully" message
+
+    And User sending the keys in the dialog content class
+      | searchName | editedNewSalaryType |
+
+    And User click on the element in the dialog content class
+      | search |
 
     When User delete "editedNewSalaryType"
 

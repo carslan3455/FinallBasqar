@@ -36,6 +36,12 @@ Feature: Create And Delete Subjects
 
     Then User should see "successfully" message
 
+    And User sending the keys in the dialog content class
+      | searchName | Group3Subject |
+
+    And User click on the element in the dialog content class
+      | search |
+
     When User delete "Group3Subject"
 
     Then User should see "successfully" message

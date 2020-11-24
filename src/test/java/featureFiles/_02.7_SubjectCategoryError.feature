@@ -54,6 +54,12 @@ Feature: Creat and Delete Functionality for Subject Category
     When User click on the element in the leftNav class
       | subjectCategories |
 
+    And User sending the keys in the dialog content class
+      | searchName | MySubjectCat3 |
+
+    And User click on the element in the dialog content class
+      | search |
+
     When User delete "MySubjectCat3"
 
     Then User should see "error" message
@@ -62,9 +68,17 @@ Feature: Creat and Delete Functionality for Subject Category
 #    ilave kısım
     Then User click on the element in the leftNav class
       | subjects |
+    And User sending the keys in the dialog content class
+      | searchName | Group3Subject |
+    And User click on the element in the dialog content class
+      | search |
     When User delete "Group3Subject"
     Then User should see "successfully" message
     Then User click on the element in the leftNav class
       | subjectCategories |
+    And User sending the keys in the dialog content class
+      | searchName | MySubjectCat3 |
+    And User click on the element in the dialog content class
+      | search |
     When User delete "MySubjectCat3"
     Then User should see "successfully" message

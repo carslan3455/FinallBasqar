@@ -40,6 +40,12 @@ Feature: Create Edit and Delete Functionality for Human Resources
 
     Then User should see "successfully" message
 
+    And User sending the keys in the dialog content class
+      | searchName | isim |
+
+    And User click on the element in the dialog content class
+      | search |
+
     Then User edit "isim"
 
     And User click on the element in the dialog content class
@@ -61,6 +67,12 @@ Feature: Create Edit and Delete Functionality for Human Resources
       | saveButton |
 
     Then User should see "successfully" message
+
+    And User sending the keys in the dialog content class
+      | searchName | editedisim |
+
+    And User click on the element in the dialog content class
+      | search |
 
     When User delete "editedisim"
 

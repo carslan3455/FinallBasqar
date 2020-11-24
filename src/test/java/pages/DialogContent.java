@@ -48,7 +48,7 @@ public class DialogContent extends _Parent {
     @FindBy (css = "input[formcontrolname='name']")    private WebElement nameConstants;
     @FindBy (css = "input[data-placeholder='Valid From']")    private WebElement validFrom;
     @FindBy (css = "ms-text-field[formcontrolname='key']>input")    private WebElement key;
-    @FindBy (css = "ms-text-field[formcontrolname='value']>input")   private WebElement valueConstants;
+    @FindBy (css = "*[formcontrolname='value']>input")   private WebElement valueConstants;
     @FindBy (css = "ms-text-field[formcontrolname='title']>input")    private WebElement namePositionSalary;
     @FindAll({ @FindBy (css = "input[name*='Formula']") })  private List<WebElement> formulaList;
     @FindBy (xpath = "//span[text()='Category']") private WebElement category;

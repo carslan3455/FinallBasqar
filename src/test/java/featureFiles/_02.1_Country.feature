@@ -32,6 +32,12 @@ Feature: Create and Delete Functionality for Countries
 
     Then User should see "successfully" message
 
+    And User sending the keys in the dialog content class
+      | searchName | Group3Country5 |
+
+    And User click on the element in the dialog content class
+      | search |
+
     When User delete "Group3Country5"
 
     Then User should see "successfully" message

@@ -33,6 +33,12 @@ Feature: Creat and Delete Functionality for Cities
 
     Then User should see "successfully" message
 
+    And User sending the keys in the dialog content class
+      | searchName | Group3City5 |
+
+    And User click on the element in the dialog content class
+      | search |
+
     When User delete "Group3City5"
 
     Then User should see "successfully" message

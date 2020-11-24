@@ -39,6 +39,12 @@ Feature: Create Edit and Delete Functionality for Human Resources
       | setupHR         |
       | salaryModifiers |
 
+    And User sending the keys in the dialog content class
+      | description | CocukYardimi |
+
+    And User click on the element in the dialog content class
+      | search |
+
     Then User edit "CocukYardimi"
 
     And User sending the keys in the dialog content class
@@ -56,6 +62,12 @@ Feature: Create Edit and Delete Functionality for Human Resources
       | humanResources  |
       | setupHR         |
       | salaryModifiers |
+
+    And User sending the keys in the dialog content class
+      | description | editedCocukYardimi |
+
+    And User click on the element in the dialog content class
+      | search |
 
     When User delete "editedCocukYardimi"
 

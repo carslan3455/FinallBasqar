@@ -31,6 +31,12 @@ Feature: Create Edit and Delete Functionality for Human Resources
 
     Then User should see "successfully" message
 
+    And User sending the keys in the dialog content class
+      | searchName | Group3NewPositionSalary |
+
+    And User click on the element in the dialog content class
+      | search |
+
     Then User edit "Group3NewPositionSalary"
 
     And User sending the keys in the dialog content class
@@ -40,6 +46,12 @@ Feature: Create Edit and Delete Functionality for Human Resources
       | saveButton |
 
     Then User should see "successfully" message
+
+    And User sending the keys in the dialog content class
+      | searchName | editedPositionSalary |
+
+    And User click on the element in the dialog content class
+      | search |
 
     When User delete "editedPositionSalary"
 
@@ -51,30 +63,42 @@ Feature: Create Edit and Delete Functionality for Human Resources
     When User click on the element in the leftNav class
       | humanResources |
       | setupHR        |
-      | positions |
+      | positions      |
 
     And User click on the element in the dialog content class
       | addButton |
 
     And User sending the keys in the dialog content class
-      | name | Group3NewPosition |
-      | shortName | G3NP         |
+      | name      | Group3NewPosition |
+      | shortName | G3NP              |
 
     And User click on the element in the dialog content class
       | saveButton |
 
     Then User should see "successfully" message
+
+    And User sending the keys in the dialog content class
+      | searchName | Group3NewPosition |
+
+    And User click on the element in the dialog content class
+      | search |
 
     Then User edit "Group3NewPosition"
 
     And User sending the keys in the dialog content class
-      | name | editedPosition |
-      | shortName | G3NnewP         |
+      | name      | editedPosition |
+      | shortName | G3NnewP        |
 
     And User click on the element in the dialog content class
       | saveButton |
 
     Then User should see "successfully" message
+
+    And User sending the keys in the dialog content class
+      | searchName | editedPosition |
+
+    And User click on the element in the dialog content class
+      | search |
 
     When User delete "editedPosition"
 

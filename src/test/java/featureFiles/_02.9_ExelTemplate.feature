@@ -16,9 +16,9 @@ Feature: Create Edit and Delete Functionality for Reports
   Scenario:  Create , Edit and Delete Excel Template
 
     When User click on the element in the leftNav class
-      | reports |
-      | setupReports|
-      | excelTemplate|
+      | reports       |
+      | setupReports  |
+      | excelTemplate |
 
     And User click on the element in the dialog content class
       | addButton |
@@ -34,6 +34,12 @@ Feature: Create Edit and Delete Functionality for Reports
     And User click on the element in the dialog content class
       | closeDialog |
 
+    And User sending the keys in the dialog content class
+      | searchName | Group3ExcelTemplate |
+
+    And User click on the element in the dialog content class
+      | search |
+
     Then User edit "Group3ExcelTemplate"
 
     And User sending the keys in the dialog content class
@@ -46,6 +52,12 @@ Feature: Create Edit and Delete Functionality for Reports
 
     And User click on the element in the dialog content class
       | closeDialog |
+
+    And User sending the keys in the dialog content class
+      | searchName | Group3EditedExcelTemplete |
+
+    And User click on the element in the dialog content class
+      | search |
 
     When User delete "Group3EditedExcelTemplete"
 

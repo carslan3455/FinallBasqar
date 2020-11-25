@@ -65,5 +65,6 @@ public class _Parent {
 
     public WebElement randomSelectFromList(List<WebElement> elementsList) {
         return elementsList.get((int)(Math.random() * elementsList.size()));
+
     }
 }

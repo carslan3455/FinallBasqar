@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -23,9 +24,15 @@ public class _Parent {
     }
 
     public void clickFunction(WebElement element) {
-        waitUntilClickable(element);
-        scroolToElement(element);
-        element.click();
+        try {
+            waitUntilClickable(element);
+            scroolToElement(element);
+            element.click();
+        }catch (StaleElementReferenceException ex){
+            ex.printStackTrace();
+            clickFunction(element);
+        }
+
 
     }
 

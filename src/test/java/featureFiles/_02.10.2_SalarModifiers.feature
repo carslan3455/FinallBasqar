@@ -26,7 +26,7 @@ Feature: Create Edit and Delete Functionality for Human Resources
     And User sending the keys in the dialog content class
       | description | CocukYardimi |
       | variable    | odenek       |
-      | priority    | 33           |
+      | priority    | 333          |
       | amount      | 100          |
 
     And User click on the element in the dialog content class
@@ -50,7 +50,7 @@ Feature: Create Edit and Delete Functionality for Human Resources
     And User sending the keys in the dialog content class
       | description | editedCocukYardimi |
       | variable    | ecck               |
-      | priority    | 13                 |
+      | priority    | 444                |
       | amount      | 300                |
 
     And User click on the element in the dialog content class

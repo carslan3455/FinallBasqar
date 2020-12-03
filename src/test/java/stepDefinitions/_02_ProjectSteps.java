@@ -9,7 +9,7 @@ import pages.LeftNav;
 
 import java.util.List;
 
-public class _02_CountrySteps {
+public class _02_ProjectSteps {
 
     LeftNav leftNav=new LeftNav();
     DialogContent dialogContent=new DialogContent();

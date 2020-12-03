@@ -29,19 +29,19 @@ public class _00_Hooks {
         Date now = new Date();
         SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd HH mm ss");
         String strDate = formater.format(now);
-        System.out.println("Cevirmeden onceki hali : " + strDate);
+        // System.out.println("Cevirmeden onceki hali : " + strDate);
 
         if (scenario.getStatus() == "failed"){
 
             String scenarioName = scenario.getName();
-            strDate = strDate.replace(":"," ");
+            strDate = strDate.replace(":","");
 
             TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
             File screenshot = ts.getScreenshotAs(OutputType.FILE);
 
             try {
                 FileUtils.copyFile(screenshot, new File("target/FailedScreenShots/"
-                      + Driver.threadBrowserName.get() + scenarioName + strDate + ".png"));
+                      + Driver.threadBrowserName.get()+ "_" + scenarioName+ "_" + strDate + ".png"));
             }catch (IOException e){
                 e.printStackTrace();
             }

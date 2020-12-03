@@ -231,6 +231,31 @@ public class DialogContent extends _Parent {
         }
 
     }
+
+
+//    public void editAndDeleteFunction(String elementName,String editorDelete) {
+//        if (messageList.size() > 0) {
+////            if (message.isDisplayed())
+//            wait.until(ExpectedConditions.invisibilityOfAllElements(message));
+//        }
+//
+//
+//        switch (editorDelete) {
+//            case "edit":
+//                myList = editButtonList;
+//                break;
+//
+//            case "delete":
+//                myList = deleteButtonList;
+//        }
+//        for (int i = 0; i < nameList.size(); i++) {
+//
+//            if (nameList.get(i).getText().equalsIgnoreCase(elementName)) {
+//                clickFunction(myList.get(i));
+//                break;
+//            }
+//        }
+//    }
 }
 
 
